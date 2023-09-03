@@ -18,4 +18,4 @@ int num1 = InputNum("Введите первое число: ");
 int num2 = InputNum("Введите второе число: ");
 int num3 = InputNum("Введите третье число: ");
 bool result = Checking(num1, num2, num3);
-Console.WriteLine(result);
+Console.WriteLine(result == true?"Да":"Нет");

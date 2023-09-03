@@ -11,9 +11,7 @@ int InputNum(string message)
 
 bool Checking(int a, int b, int c)
 {
-    if (a + b > c && a + c > b && b + c > a)
-    return true;
-    else return false;
+    return a + b > c && a + c > b && b + c > a;
 }
 
 int num1 = InputNum("Введите первое число: ");

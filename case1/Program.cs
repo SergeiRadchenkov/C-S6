@@ -11,7 +11,9 @@ int InputNum(string message)
 }
 
 int[] CreateArray(int size)
+{
     return new int[size];
+}
 
 void FillArray(int[] arr, int minValue, int maxValue)
 {
@@ -20,4 +22,29 @@ void FillArray(int[] arr, int minValue, int maxValue)
         arr[i] =rnd.Next(minValue, maxValue + 1);
 }
 
-void PrintArray
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+        Console.Write(arr[i] + " ");
+    Console.WriteLine();
+}
+
+void ReverseArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length / 2; i++)
+    {
+        int temp = arr[i];
+        arr[i] = arr[arr.Length - 1 - i];
+        arr[arr.Length - 1 - i] = temp;
+        // (arr[i], arr[arr.Length -1 - i]) = (arr[arr.Length -1 - i], arr[i]);
+    }    
+}
+
+int size = InputNum("Введите размер массива: ");
+int[] array = CreateArray(size);
+int min = InputNum("Введите минимальное значение элемента: ");
+int max = InputNum("Введите максимальное значение элемента: ");
+FillArray(array, min, max);
+PrintArray(array);
+ReverseArray(array);
+PrintArray(array);
